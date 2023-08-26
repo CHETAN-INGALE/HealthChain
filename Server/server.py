@@ -1,17 +1,66 @@
+import json
 import requests
+from uuid import uuid4
 
-# Define the payload
-payload = "04{NA,V,f25073ce9d46b0f720d00f32d8979c4efdab5346868ffac90f4412d02710f 7ef,0100002020000000,2.0,20160603104809,1,0,0,0,2.0,1f5368b4cf6d74290 33a47b8c7963329945c2bdf2690fa3685945b15d3cda2e0,96cae35ce8a9b0244178b f28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e,,NA,P,50,NA,E,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,af76e1ffcb2e308770ac5212acbbc7d93ba5693d828714a513 6b6e1a9f438fc3,NA,NA}"
+uuidno = str(uuid4())
 
-# Define the HTTPS URL
-url = "https://developer.uidai.gov.in/2.5/public/0/0/MCNYL7FpPgjEhx7HBp9tu59Vdm4FnYGlxuqHctfAeNNaCufVafshqzQ"  # Replace with your actual URL
+def getcaptcha():
+    params = {
+        "langCode": "en",
+        "captchaLength": "3",
+        "captchaType": "2"
+    }
+    myUri = "https://stage1.uidai.gov.in/unifiedAppAuthService/api/v2/get/captcha"
 
-# Send the POST request
-response = requests.post(url, data=payload)
+    response = requests.post(myUri, json=params, headers={'Content-type': 'application/json'})
+    print('Called')
+    responsebody = response.json()
+    return responsebody
 
-# Check the response
-if response.status_code == 200:
-    print("Request successful")
-else:
-    print(f"Request failed with status code: {response.status_code}")
-    print(response.text)  # Print the response content for debugging purposes
+def getotp(aadharno, captcha, captchatxnid):
+    params = {
+        "uidNumber": aadharno,
+        "captchaTxnId": captchatxnid,
+        "captchaValue": captcha,
+        "transactionId": f"MYAADHAAR:{uuidno}"
+    }
+    myUri = "https://stage1.uidai.gov.in/unifiedAppAuthService/api/v2/generate/aadhaar/otp"
+    
+    headers = {
+        'x-request-id': uuidno,
+        'appid': 'MYAADHAAR',
+        'Accept-Language': 'en_in',
+        'Content-Type': 'application/json'
+    }
+    
+    response = requests.post(myUri, json=params, headers=headers)
+    responsebody = response.json()
+    return responsebody
+
+def validateOTP(aadharno, otp, txnid):
+    params = {
+        'txnId': txnid,
+        'otp': otp,
+        'uid': aadharno
+    }
+    
+    myUri = 'https://stage1.uidai.gov.in/onlineekyc/getAuth/'
+    
+    response = requests.post(myUri, json=params, headers={'Content-Type': 'application/json'})
+    responsebody = response.json()
+    print(responsebody)
+    
+    if responsebody['status'] == 'y':
+        return True
+    else:
+        return False
+
+# Example usage
+captcha_data = getcaptcha()
+captcha_value = captcha_data['captcha']
+
+otp_data = getotp('123456789012', captcha_value, captcha_data['captchaTxnId'])
+otp_value = otp_data['aadhaar-otp']
+
+validation_result = validateOTP('123456789012', otp_value, otp_data['txnId'])
+print(validation_result)
