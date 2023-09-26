@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: purple;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;     
+}
+
+h2{
+    font-size: 4em;
+    color: white;
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.9em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navigation a::after{
+    content: '' ;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+
+.navigation a:hover:after{
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.9em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5ms;
+}
+
+
+.navigation .btnLogin-popup:hover{
+    background: white;
+    color: purple;
+
+}
+
+.home{
+    
+    position: absolute;
+    top: 100px;
+    right: 400px;
+}
+
+.home .above{
+    position: relative;
+    left: 325px;
+    top: 150px;
+    font-size: 3.7em;
+    font-weight: 500;
+    color: white;
+}
+.home .below{
+    position: relative;
+    left: 270px;
+    top: 125px;
+    font-size: 4.7em;
+    font-weight: 800;
+    color: #FEFFAC;
+}
+
+.points{
+    position: absolute;
+    top: 290px;
+    right: 1000px;
+    width: 650px;
+    height: 650px;
+    background: white;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.points .list{
+    position: relative;
+    color: purple;
+    right: -220px;
+    top: -50px;
+    font-size: 2.7em;       
+}
+
+.DI{
+    color: white;
+    position: relative;
+    top: 170px;
+    left: 400px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.btn{
+    position: relative;
+    top: 220px;
+    left: 170px;
+    width: 120px;
+    height: 35px;
+    border: 2px solid ;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    background-color: white;
+    color: purple;
+}
