@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Verification</title>
+</head>
+
+<body>
+    <div class="split left">
+        <h1>HealthChain</h1>
+    </div>
+    <div class="split right">
+        <div class="container">
+            <h2>Verification</h2>
+            <p>
+                We have sent a six digit code to your registered phone number. <br>Enter the code below to
+                complete the verification.
+            </p>
+
+            <div class="code-container">
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            </div>
+            <div>
+                <button type="submit" class="ver">Verify</button>
+            </div>
+            <div class="res">
+                <small>
+                    Didn't receive the code?<a href="#"> RESEND</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const codes = document.querySelectorAll('.code')
+
+        codes[0].focus()
+
+        codes.forEach((code, idx) => {
+            code.addEventListener('keydown', (e) => {
+                if (e.key >= 0 && e.key <= 9) {
+                    codes[idx].value = ''
+                    setTimeout(() => codes[idx + 1].focus(), 10)
+                } else if (e.key === 'Backspace') {
+                    setTimeout(() => codes[idx - 1].focus(), 10)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

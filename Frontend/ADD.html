@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h2>HealthChain</h2>
+        <nav class="navigation">
+            <a href="about.html">About</a>
+            <a href="#" onclick="toggleMenu()">Profile</a>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <h3>Doctor Name</h3>
+                    </div>
+                    <hr>
+
+                    <a href="#" class="sub-menu-link">
+                        <p>Your Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Diagnose Patient</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Patient Records</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="diagnose">
+        <h2>Diagnose Patient</h2>
+        <hr>
+        <div class="pd">
+        <label>
+            Patient Name:
+        </label>
+        <br>
+        <label>
+            Current Dosage:
+        </label>
+        <br>
+        <label>
+            Date:
+            <input type="text" placeholder="type here">
+        </label>
+        <br>
+        <label>
+            Diagnosed with:
+            <input type="text" placeholder="type here">
+        </label>
+        <br>
+        <label>
+            Prescription:
+            <input type="text" placeholder="type here">
+        </label>
+        <br>
+
+        <button type="submit" class="save">Save</button>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+
+</body>
+
+</html>

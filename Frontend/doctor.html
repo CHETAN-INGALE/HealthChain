@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>HealthChain</h2>
+        <nav class="navigation">
+            <a href="about.html">About</a>
+            <a href="#" onclick="toggleMenu()">Profile</a>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <h3>Doctor Name</h3>
+                    </div>
+                    <hr>
+
+                    <a href="#" class="sub-menu-link">
+                        <p>Your Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Diagnose Patient</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Patient Records</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="display-info">
+        <h2>Patient Details</h2>
+        <hr>
+        <div class="patient-info">
+            <label>
+                Patient Name :
+            </label>
+            <br>
+            <label>
+                Allergies :
+            </label>
+            <br>
+            <label>
+                Current Dosage :
+            </label>
+            <br>
+        </div>
+    </div>
+    
+            
+
+
+
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+
+</body>
+</html>

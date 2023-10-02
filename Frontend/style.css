@@ -1,0 +1,658 @@
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+    background-size: cover;
+    background-position: center;
+}
+
+/*home*/
+
+
+header {
+    background: purple;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+h2 {
+    font-size: 4em;
+    color: white;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+
+.navigation a:hover:after {
+    transform: scaleX(1);
+}
+
+
+.home {
+
+    position: absolute;
+    top: 100px;
+    right: 400px;
+}
+
+.home .above {
+    position: relative;
+    left: 325px;
+    top: 150px;
+    font-size: 3.7em;
+    font-weight: 500;
+    color: purple;
+}
+
+.home .below {
+    position: relative;
+    left: 270px;
+    top: 125px;
+    font-size: 4.7em;
+    font-weight: 800;
+    color: black;
+}
+
+.points {
+    position: absolute;
+    top: 290px;
+    right: 1000px;
+    width: 650px;
+    height: 650px;
+    background: purple;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.points .list {
+    position: relative;
+    color: white;
+    right: -220px;
+    top: -50px;
+    font-size: 2.7em;
+}
+
+.DI {
+    color: purple;
+    position: relative;
+    top: 170px;
+    left: 460px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn {
+    position: relative;
+    top: 220px;
+    left: 230px;
+    width: 120px;
+    height: 35px;
+    border: 2px solid;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    background-color: purple;
+    color: white;
+}
+
+
+
+/*login*/
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+    background-color: purple;
+}
+
+.right {
+    right: 0;
+    background-color: white;
+}
+
+.left h1 {
+    position: absolute;
+    top: 326px;
+    left: 100px;
+    font-size: 6em;
+    font-weight: 800;
+    color: white;
+}
+
+
+.wrapper {
+    position: absolute;
+    top: 180px;
+    right: 190px;
+    width: 400px;
+    height: 440px;
+    background: purple;
+    border: 2px solid violet;
+    border-radius: 20px;
+    display: flex;
+
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+
+.form-box h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: white;
+    line-height: 57px;
+}
+
+.usertype {
+    position: relative;
+    top: -10px;
+    color: white;
+}
+
+.otp {
+    width: 100%;
+    height: 45px;
+    background: white;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: purple;
+    font-weight: 700;
+}
+
+/*otp*/
+
+h1 {
+    position: absolute;
+    left: 100px;
+    font-size: 6em;
+    font-weight: 800;
+    color: purple;
+}
+
+.container {
+    position: absolute;
+    top: 180px;
+    right: 70px;
+    background-color: purple;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 1000px;
+    text-align: center;
+    color: white;
+}
+
+.code-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.code {
+    caret-color: transparent;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    font-size: 30px;
+    width: 75px;
+    height: 80px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 300;
+}
+
+@media (max-width: 600px) {
+    .code-container {
+        flex-wrap: wrap;
+    }
+
+    .code {
+        font-size: 24px;
+        height: 50px;
+        max-width: 50px;
+        font-size: bold;
+    }
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.code:valid {
+    border-color: #9861c2;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+}
+
+.ver {
+    width: 100%;
+    height: 45px;
+    background: white;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: purple;
+    font-weight: 700;
+}
+
+.res a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.res a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .home .above {
+        font-size: 2em;
+    }
+
+    .home .below {
+        font-size: 3em;
+    }
+
+    .list ul li {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .DI {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 1em;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 3em;
+    }
+
+    .navigation a {
+        font-size: 1.5em;
+    }
+
+    .home .above {
+        font-size: 1.5em;
+    }
+
+    .home .below {
+        font-size: 2.5em;
+    }
+
+    .list ul li {
+        font-size: 1em;
+    }
+
+    .DI {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 0.9em;
+    }
+}
+
+/*view*/
+
+.sub-menu-wrap{
+    position: absolute;
+    top:100%;
+    right: 0.5%;
+    width: 320px;
+    background-color: #9861c2;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+
+.sub-menu{
+        background: purple;
+        padding: 20px;
+        margin: 10px;
+
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3{
+    font-weight: 500;
+    color: white;
+}
+
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: white;
+    margin: 15px 0 10px;
+}
+
+.sub-menu a{
+    position: relative;
+    right: 13%;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.sub-menu a:hover::after{
+    transform: scaleX(0);
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link span{
+    position: absolute;
+    right: -30px;
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+.sub-menu-link:hover span{
+    font-weight: 600;
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+
+.display-info{
+    background-color: #9861c2;
+    width: 900px;
+    height: 400px;
+}
+
+.display-info h2{
+    text-align: center ;
+    color: purple;  
+}
+
+.display-info hr{
+    position: relative;
+    top: -15px;
+    left: 175px;
+    border: 0;
+    height: 5px;
+    width: 60%;
+    background: purple;
+    margin: 15px 0 10px;
+}
+.patient-info{
+    position: relative;
+    top: 20px;
+    font-size: 1.5em;
+}
+
+.patient-info label{
+    color: purple;
+    padding: 15px;
+
+}
+
+.add{
+    position: absolute;
+    top: 650px;
+    left: 700px;
+    width: 150px;
+    height: 50px;
+    border: 2px solid;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 400;
+    background-color: purple;
+    color: white;
+}
+
+
+/*ADD*/
+
+
+.diagnose{
+    background-color: #9861c2;
+    width: 900px;
+    height: 400px;
+}
+
+.diagnose h2{
+    text-align: center ;
+    color: purple;  
+}
+
+.diagnose hr{
+    position: relative;
+    top: -15px;
+    left: 174px;
+    border: 0;
+    height: 5px;
+    width: 62%;
+    background: purple;
+    margin: 15px 0 10px;
+}
+
+.pd{
+    position: relative;
+    top: 20px;
+    font-size: 1.5em;
+}
+
+.pd label{
+    color: purple;
+    padding: 15px;
+}
+
+.pd input{
+    width: 600px;
+    background-color: #9861c2;
+    border: none;
+    outline: none;
+    color: purple;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+}
+
+.pd input::placeholder{
+    color: white;
+    font-size: 0.9em;
+}
+
+.save{
+    position: absolute;
+    top: 270px;
+    left: 360px;
+    width: 150px;
+    height: 50px;
+    border: 2px solid;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    background-color: purple;
+    color: white;
+}
+
+
+
+/*doctor*/
+
+.table-wrapper{
+    position: absolute;
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
